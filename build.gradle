@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-webmvc:4.0.5.RELEASE",
+            'javax.validation:validation-api:1.1.0.Final',
+            'org.hibernate:hibernate-validator:5.0.1.Final',
+            'org.slf4j:slf4j-api:1.7.5'
+
+    testCompile "junit:junit:4.8.2"
+}
+
+task "create-dir" << {
+    sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
