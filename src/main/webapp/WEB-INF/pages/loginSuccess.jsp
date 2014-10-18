@@ -9,7 +9,7 @@
 </head>
 <body>
     <div align="center">
-        <h2>Welcome ${userForm.email}! You have logged in successfully.</h2>
+        <h2>Welcome ${user.email}! You have logged in successfully.</h2>
     </div>
 </body>
 </html>

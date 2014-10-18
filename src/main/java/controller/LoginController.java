@@ -18,12 +18,12 @@ public class LoginController {
 
     @RequestMapping(method = GET)
     public String login(Model model){
-        model.addAttribute("userForm", new User());
+        model.addAttribute("user", new User());
         return "login";
     }
 
     @RequestMapping(method = POST)
-    public String doLogin(@Valid @ModelAttribute("userForm") User userForm, BindingResult result) {
+    public String doLogin(@Valid @ModelAttribute("user") User user, BindingResult result) {
         if(result.hasErrors()) {
             return "login";
         }

@@ -17,4 +17,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
+    <!--this two bean is for spring validation using validator interface-->
+    <bean id="userValidator" class="controller.UserValidator"/>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list><value>classpath:messages</value></list>
+        </property>
+    </bean>
 </beans>
